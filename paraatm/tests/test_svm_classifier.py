@@ -7,7 +7,7 @@ import os
 
 THIS_DIR = os.path.dirname(os.path.abspath(__file__))
 
-class TestSVM(unittest.TestCase):
+class TestBDN(unittest.TestCase):
     
     def test_SVM_input(self):
         x_train_path = os.path.join(THIS_DIR, '..', 'sample_data/SVM_classifier/x_train.csv')
@@ -42,4 +42,4 @@ class TestSVM(unittest.TestCase):
         smodel = SVM_ASRS_risk_category(X_train,Y_train)
         Y_test = smodel.get_risk_category(X_test)
 
-        self.assertEqual(Y_test.shape[1],150)
+        self.assertEqual(Y_test.shape[0],150)
